@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Film Database</string>
+    <string name="actor_name">No chosen Actor</string>
+    <!--    for naviagtion drawer-->
+    <string name="open">Open Navigation Drawer</string>
+    <string name="close">Close Navigation Drawer</string>
+    <string name="filmography_header">Filmography</string>
+    <string name="add_button">Add film</string>
+    <string name="about">
+<font size="20" color = "#246ee9"><b>Film Database</b></font>\n <i><b>V1.0</b></i> \n\n\n<u><b>Terms of use:</b></u>\nThe use of this application confirms the acceptance of these terms and conditions.\nUnless permission is granted, the user is not allowed to use third parties to access the App source code or make alterations.\nThe use of this App in any unlawful manner, or for commercial gain is not allowed.\nThe developer is not responsible for any errors or omissions. The Actor data are retrieved from Wikipedia, and the use of this data should respect their terms and conditions.\nMost app icons are licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+All other logos and images have been provided by sites where no attribution is required.
+        \n\n<b><u>Privacy Policy:</u></b>\nThe app does not collect any information used to identify you.\n\n<font color="red"><b><i>Copyright 2022 Fadi Hassoun – Glyndwr University</i></b></font>\nContact: S21004286@mail.glyndwr.ac.uk
+</string>
+    <string name="help">
+<font color = "#246EE9" size= "20"><b>Instructions to use the app:</b></font>\n\n\n<b><u>Adding an actor:</u></b>\n\n\tInitially and after a reset, the app requests the user to enter an actor’s name upon which information about the actor will be retrieved from the web and stored in the database.\n\n<b><u>Navigating the app:</u></b>\n\n\tThe navigation menu on the top left of all app screens (activities) will allow the user to navigate through the different activities.
+\n\n<b><u>Viewing the filmography list:</u></b>\n\n\tClick on ‘Filmography’ to access the films list. From there, you can add, edit, delete, or search for films.\n\n<b><u>Adding to the films list:</u></b>\n\n\tClick on the add (+) button within the Filmography screen to add a new film and enter the film information. At least the film title is required to complete this action.\n\n<b><u>Editing a record in the films list:</u></b>\n\n\tClick on a film entry and select ‘Edit’ to edit the film information and update the entry.\n\n<b><u>Deleting a record from the films list:</u></b>\n\n\tClick on a film entry and select ‘Delete’ to remove a film from the list.
+        \n\n<b><u>Searching for films in the list:</u></b>\n\n\tClick on the search icon and enter the full or part of the title. You can also search by year or genre upon clicking on the corresponding buttons below the toolbar. The result of your search query will be displayed in a list.\n\n<b><u>Resetting the database:</u></b>\n\n\tFrom the menu, click on ‘Reset’; upon confirmation, all the actor and film data will be permanently deleted. A new entry for actor’s name is required after reset.\n\n<b><u>Exiting the app:</u></b>\n\n\tFrom the navigation menu, click on ‘Exit’ to close the app.\n
+    </string>
+    <string name="addLogo">Add actor logo</string>
+    <string name="actor_image">Actor Image</string>
+    <string name="about_the_actor">The Actor</string>
+    <string name="reset_confirm_msg">Are you sure you want to reset? \n This will erase all actor and film data!</string>
+    <string name="about_header">ABOUT</string>
+    <string name="add_a_filmHeader">Add a film</string>
+    <string name="addfilm_year">Year:</string>
+    <string name="menu">menu</string>
+</resources>
