@@ -1,4 +1,4 @@
-package com.example.fdb;
+package com.example.fdb.activity;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -17,6 +17,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.fdb.DBHandler;
+import com.example.fdb.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

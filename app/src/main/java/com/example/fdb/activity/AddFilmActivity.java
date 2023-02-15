@@ -1,9 +1,7 @@
-package com.example.fdb;
+package com.example.fdb.activity;
 
 
 import android.content.Intent;
-import android.database.DatabaseUtils;
-import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +10,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.fdb.DBHandler;
+import com.example.fdb.R;
 
 //All activities are extending BaseActivity to show the navigation menu on them
 public class AddFilmActivity extends BaseActivity {

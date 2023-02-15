@@ -5,7 +5,7 @@
     android:id="@+id/editFilm"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditFilmActivity">
+    tools:context=".activity.EditFilmActivity">
 
     <TextView
         android:id="@+id/editFilmHeader"

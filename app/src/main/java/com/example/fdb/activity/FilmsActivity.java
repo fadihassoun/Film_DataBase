@@ -1,4 +1,4 @@
-package com.example.fdb;
+package com.example.fdb.activity;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.SearchView;
 
+import com.example.fdb.DBHandler;
+import com.example.fdb.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;

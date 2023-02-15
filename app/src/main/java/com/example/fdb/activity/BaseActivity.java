@@ -1,4 +1,4 @@
-package com.example.fdb;
+package com.example.fdb.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.fdb.DBHandler;
+import com.example.fdb.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class BaseActivity extends AppCompatActivity

@@ -1,4 +1,4 @@
-package com.example.fdb;
+package com.example.fdb.activity;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,6 +10,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.fdb.DBHandler;
+import com.example.fdb.R;
 
 import java.util.ArrayList;
 

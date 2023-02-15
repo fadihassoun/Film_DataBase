@@ -1,4 +1,4 @@
-package com.example.fdb;
+package com.example.fdb.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import androidx.appcompat.widget.SearchView;
 
 import android.widget.Button;
+
+import com.example.fdb.R;
 
 import java.util.ArrayList;
 

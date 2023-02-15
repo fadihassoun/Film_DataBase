@@ -1,9 +1,11 @@
-package com.example.fdb;
+package com.example.fdb.activity;
 
 
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
+
+import com.example.fdb.R;
 
 public class HelpActivity extends BaseActivity
 {

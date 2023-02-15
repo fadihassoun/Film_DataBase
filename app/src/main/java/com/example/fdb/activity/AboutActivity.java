@@ -1,6 +1,8 @@
-package com.example.fdb;
+package com.example.fdb.activity;
 
 import android.os.Bundle;
+
+import com.example.fdb.R;
 
 public class AboutActivity extends BaseActivity
 {
