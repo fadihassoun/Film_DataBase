@@ -32,16 +32,14 @@ import java.io.InputStream;
 import java.net.URL;
 
 //All activities are extending BaseActivity to show the navigation menu on them
-public class ActorActivity_Main extends BaseActivity
-
-{
+public class ActorActivity_Main extends BaseActivity {
     //Actor layout parameters
     ImageView actorImageView;
     Drawable actorImage;
     TextView actorNameTextV;
     TextView actorInfoTextV;
     TextView actorImageTextV;
-    String actorNameString="";
+    String actorNameString = "";
     String actorInfoString = "";
     Button addActorButton;
     //Dialog layout parameter
@@ -53,8 +51,7 @@ public class ActorActivity_Main extends BaseActivity
     SQLiteDatabase fdb;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.addContentView(R.layout.activity_actor);
 
@@ -66,8 +63,7 @@ public class ActorActivity_Main extends BaseActivity
         /* first this checks if the Actor table already exists and not empty; if it doesn't exist,
         a dialog will show to ask the user for the actor name, and then webscraping is used to extract
         the information and image of the actor */
-        if (!fdbH.actorTableExists(fdb))
-        {
+        if (!fdbH.actorTableExists(fdb)) {
             Toast.makeText(this, "Enter the actor's name", Toast.LENGTH_LONG).show();
 
             dialog.show();
@@ -76,24 +72,19 @@ public class ActorActivity_Main extends BaseActivity
 
             // getting array (of top 1000 actors) from array resources to help user with the input
             Resources res = getResources();
-            String [] actorsList = res.getStringArray(R.array.actorsList);
-             // creating an Array Adapter for the actors list
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                    android.R.layout.simple_expandable_list_item_1, actorsList);
+            String[] actorsList = res.getStringArray(R.array.actorsList);
+            // creating an Array Adapter for the actors list
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, actorsList);
             // setting the autocomplete string array on the View
             actorNameDialogEdit.setAdapter(adapter);
 
-            addActorButton.setOnClickListener(new View.OnClickListener()
-            {
+            addActorButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
+                public void onClick(View view) {
                     //checking if the name is blank
-                    if (actorNameDialogEdit.getText().length()==0)
-                    {
+                    if (actorNameDialogEdit.getText().length() == 0) {
                         actorNameDialogEdit.setError("Name cannot be blank");
-                    }
-                    else {
+                    } else /**/ {
                         //return to the main activity
                         dialog.dismiss();
 
@@ -109,8 +100,7 @@ public class ActorActivity_Main extends BaseActivity
 
         } // if (!fdbH.actorTableExists(fdb))
 
-        else
-        {
+        else {
             // if the database table exits, this will retrieve the actor name, info, and image and set them to the views
             actorNameString = (String) fdbH.getActorData(fdb)[0];
             actorNameTextV.setText(actorNameString);
@@ -125,8 +115,7 @@ public class ActorActivity_Main extends BaseActivity
 
     }//protected void onCreate(Bundle savedInstanceState)
 
-    private void setupControls()
-    {
+    private void setupControls() {
         actorNameTextV = findViewById(R.id.actorNameTextView);
         actorInfoTextV = findViewById(R.id.actorInfoTextV);
         actorInfoTextV.setMovementMethod(new ScrollingMovementMethod());
@@ -141,8 +130,7 @@ public class ActorActivity_Main extends BaseActivity
         actorImage = actorImageView.getDrawable();
     }//private void setupControls()
 
-    private void initDB()
-    {
+    private void initDB() {
         // Initiate the DBHandler Class
         fdbH = new DBHandler(this);
 
@@ -151,44 +139,36 @@ public class ActorActivity_Main extends BaseActivity
 
     }//private void initDB()
 
-    private void scrapeActorInfo()
-    {
+    private void scrapeActorInfo() {
         actorInfoTextV.setText("Retrieving actor information please Wait...");
         // replacing space with '-' for webscraping
-        String preparedName=actorNameString.replaceAll(" ", "_");
+        String preparedName = actorNameString.replaceAll(" ", "_");
 
         //The thread is to retrieve information about the actor from the web using Jsoup
-        new Thread(new Runnable()
-        {
+        new Thread(new Runnable() {
             @Override
-            public void run()
-            {
-                try
-                {
-                    String urlString = "https://en.wikipedia.org/wiki/"+preparedName;
+            public void run() {
+                try {
+                    String urlString = "https://en.wikipedia.org/wiki/" + preparedName;
                     Document scrapeDoc = Jsoup.connect(urlString).get();
 
                     //trying to find the image in the specified CSS selector
-                    try
-                    {
+                    try {
                         // getting the actor image
                         Elements images = scrapeDoc.select("#mw-content-text > div.mw-parser-output > table.infobox.biography.vcard > tbody > tr:nth-child(2) > td > a > img");
-                        String imageHref="";
-                        for (Element image : images)
-                        {
+                        String imageHref = "";
+                        for (Element image : images) {
                             imageHref = image.absUrl("src");
                         }
                         //downloading image into a drawable
                         actorImage = Drawable.createFromStream((InputStream) new URL(imageHref).getContent(), "src");
 
 
-                    } catch (IOException imageError)
-                    {
+                    } catch (IOException imageError) {
                         Log.w("Image not found", imageError.getMessage());
                         runOnUiThread(new Runnable() {
                             @Override
-                            public void run()
-                            {
+                            public void run() {
                                 actorImageTextV.setText("Image Not Found");
                             }
                         });
@@ -198,11 +178,10 @@ public class ActorActivity_Main extends BaseActivity
 
                     Elements paragraphs = scrapeDoc.select("#mw-content-text > div.mw-parser-output > p");
                     //#mw-content-text > div.mw-parser-output > p:nth-child
-                    int i=0;
+                    int i = 0;
 
-                    for (Element p : paragraphs)
-                    {
-                        if(i<5)
+                    for (Element p : paragraphs) {
+                        if (i < 5)
                         //get only the first 5 paragraphs
                         {
                             actorInfoString = "\n" + actorInfoString + p.text();
@@ -216,11 +195,9 @@ public class ActorActivity_Main extends BaseActivity
 
 
                     //edit the view in the UI thread and store Actor info into database
-                    runOnUiThread(new Runnable()
-                    {
+                    runOnUiThread(new Runnable() {
                         @Override
-                        public void run()
-                        {
+                        public void run() {
                             actorInfoTextV.setText(actorInfoString);
 
                             //assigning the retrieved image to the ImageView
@@ -240,15 +217,12 @@ public class ActorActivity_Main extends BaseActivity
                     });//runOnUiThread
 
                 }//try
-                catch (IOException err)
-                {
-                    runOnUiThread(new Runnable()
-                    {
+                catch (IOException err) {
+                    runOnUiThread(new Runnable() {
                         @Override
-                        public void run()
-                        {
+                        public void run() {
                             //message if error occurs in retrieving the information from the web
-                            actorInfoTextV.setText("Could not retrieve info from the internet: "+err.getMessage());
+                            actorInfoTextV.setText("Could not retrieve info from the internet: " + err.getMessage());
                             dialog.show();
                             actorNameDialogEdit.setError("Not found, try again");
                             Toast.makeText(getBaseContext(), "Check your actor name and try again", Toast.LENGTH_LONG).show();
