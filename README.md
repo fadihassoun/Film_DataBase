@@ -1,3 +1,6 @@
+The aim of this document is to illustrate the functionalities of the Film Database app. Runtime screenshots are also included to demonstrate the app functionalities as well as test scenarios for handling possible invalid user input.
+
+
 App  Demonstration
 
 The following series of screenshots show how different app features.
@@ -188,5 +191,9 @@ App testing for possible invalid user input
 ![image](https://github.com/fadihassoun/Film_DataBase/assets/97429326/489a7484-5505-4f0c-940d-9fadff139544)
 ![image](https://github.com/fadihassoun/Film_DataBase/assets/97429326/e0feb446-9dbe-4c1a-b061-06b715b2a2ee)
 
+
+Apk:
+
+This app can be installed on an android phone from the following link: https://github.com/fadihassoun/filmography_database_app/blob/main/Film_Database_base.apk 
 
  
