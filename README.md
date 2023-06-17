@@ -3,9 +3,9 @@ App  Demonstration
 The following series of screenshots show how different app features.
 
 •	The first run dialog
-![image](https://github.com/fadihassoun/Film_DataBase/assets/97429326/7eab3aea-8acf-4729-a9b4-28cd3521b660)
 
- ![image](https://github.com/fadihassoun/Film_DataBase/assets/97429326/203e5dcc-ee18-43b8-ad30-356f7090e53f)
+![image](https://github.com/fadihassoun/Film_DataBase/assets/97429326/7eab3aea-8acf-4729-a9b4-28cd3521b660)
+![image](https://github.com/fadihassoun/Film_DataBase/assets/97429326/203e5dcc-ee18-43b8-ad30-356f7090e53f)
 
 
  
@@ -28,7 +28,8 @@ Description of the above screenshots: the one on the left is the actor activity 
 ![image](https://github.com/fadihassoun/Film_DataBase/assets/97429326/0e274c51-f042-4be1-a19c-a30a5ad356cb)
 
 
- 
+
+
 •	The Filmography activity
 
  ![image](https://github.com/fadihassoun/Film_DataBase/assets/97429326/e4a30648-f336-48a1-9e25-4a7ee46c6512)
